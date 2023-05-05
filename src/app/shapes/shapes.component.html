@@ -1,0 +1,24 @@
+<div class="container">
+    <h3>            PARENT COMPONENT </h3>
+         <label for="length">Length:</label>   
+        <input type="number"  placeholder="enter length" id="length" name="length" [(ngModel)]="length">
+        <br>
+        <br><br>
+        <label for="breadth">breadth:</label>
+        <input type="number" placeholder="enter email" id="breadth" name="breadth"[(ngModel)]="breadth">
+        <br>
+        <br>
+        <label for="height">height:</label>
+        <input type="number" placeholder="enter email" id="height" name="height"  [(ngModel)]="height">
+        <br><br>
+        <button type="button" (click)="addShape(length,breadth,height)"> submit </button>
+        <br>
+        <hr>
+    
+</div>
+
+<div>
+    <div *ngFor="let shape of shapeList">
+        <app-cube [shape]="shape" (calculatearea)="TotalArea($event)"></app-cube>
+    </div>
+</div>
